@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://0kx0j7hy7sox"]
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
