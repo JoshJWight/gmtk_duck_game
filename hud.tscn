@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfeuaq3vq712l"]
+
+[ext_resource type="Script" uid="uid://b4xvc2r7spcn3" path="res://hud.gd" id="1_37p78"]
+[ext_resource type="Texture2D" uid="uid://dg3oljnrmn60t" path="res://down.png" id="2_64ctp"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." groups=["hud"]]
+script = ExtResource("1_37p78")
+
+[node name="DownLabel" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Down: 0"
+
+[node name="DownMeter" type="VBoxContainer" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Down0" type="TextureRect" parent="CanvasLayer/DownMeter"]
+layout_mode = 2
+texture = ExtResource("2_64ctp")
+
+[node name="Down1" type="TextureRect" parent="CanvasLayer/DownMeter"]
+layout_mode = 2
+texture = ExtResource("2_64ctp")
+
+[node name="Down2" type="TextureRect" parent="CanvasLayer/DownMeter"]
+layout_mode = 2
+texture = ExtResource("2_64ctp")
+
+[node name="Down3" type="TextureRect" parent="CanvasLayer/DownMeter"]
+layout_mode = 2
+texture = ExtResource("2_64ctp")
+
+[node name="Down4" type="TextureRect" parent="CanvasLayer/DownMeter"]
+layout_mode = 2
+texture = ExtResource("2_64ctp")
+
+[node name="Down5" type="TextureRect" parent="CanvasLayer/DownMeter"]
+layout_mode = 2
+texture = ExtResource("2_64ctp")
+
+[node name="Down6" type="TextureRect" parent="CanvasLayer/DownMeter"]
+layout_mode = 2
+texture = ExtResource("2_64ctp")
+
+[node name="Down7" type="TextureRect" parent="CanvasLayer/DownMeter"]
+layout_mode = 2
+texture = ExtResource("2_64ctp")

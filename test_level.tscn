@@ -1,7 +1,48 @@
-[gd_scene format=3 uid="uid://0kx0j7hy7sox"]
+[gd_scene load_steps=7 format=4 uid="uid://0kx0j7hy7sox"]
+
+[ext_resource type="Texture2D" uid="uid://dy2xq4p5cd0xl" path="res://dirt.png" id="1_1c2mv"]
+[ext_resource type="PackedScene" uid="uid://drips208myuq8" path="res://player.tscn" id="2_f7g2b"]
+[ext_resource type="PackedScene" uid="uid://1min7nkqpo7o" path="res://duckling.tscn" id="3_f7g2b"]
+[ext_resource type="PackedScene" uid="uid://cfeuaq3vq712l" path="res://hud.tscn" id="4_4ptq8"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4ptq8"]
+texture = ExtResource("1_1c2mv")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_sb12i"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_4ptq8")
 
 [node name="TestLevel" type="Node2D"]
 
-[node name="HUD" type="CanvasLayer" parent="."]
-
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(1, 0)
+tile_map_data = PackedByteArray("AAD//wAAAAAAAAAAAAD+/wAAAAAAAAAAAAD9/wAAAAAAAAAAAAD8/wAAAAAAAAAAAAD7/wAAAAAAAAAAAAD6/wAAAAAAAAAAAAD5/wAAAAAAAAAAAAD4/wAAAAAAAAAAAAD3/wAAAAAAAAAAAAD2/wAAAAAAAAAAAAD1/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAHAP//AAAAAAAAAAAHAP7/AAAAAAAAAAAHAP3/AAAAAAAAAAAHAPz/AAAAAAAAAAAHAPv/AAAAAAAAAAAHAPr/AAAAAAAAAAAHAPn/AAAAAAAAAAD0/wAAAAAAAAAAAADz/wAAAAAAAAAAAADy/wAAAAAAAAAAAADy////AAAAAAAAAADx////AAAAAAAAAADw////AAAAAAAAAADv////AAAAAAAAAADu////AAAAAAAAAADt////AAAAAAAAAADs////AAAAAAAAAADr////AAAAAAAAAADq////AAAAAAAAAADp////AAAAAAAAAADp//7/AAAAAAAAAADp//3/AAAAAAAAAADp//z/AAAAAAAAAADp//v/AAAAAAAAAADp//r/AAAAAAAAAADp//n/AAAAAAAAAADp//j/AAAAAAAAAADq//j/AAAAAAAAAADq//f/AAAAAAAAAADq//b/AAAAAAAAAADq//X/AAAAAAAAAADt//z/AAAAAAAAAADu//z/AAAAAAAAAADv//z/AAAAAAAAAADy//n/AAAAAAAAAADz//n/AAAAAAAAAAD0//n/AAAAAAAAAAD1//n/AAAAAAAAAAD2//n/AAAAAAAAAAD4//b/AAAAAAAAAAD5//b/AAAAAAAAAAD6//b/AAAAAAAAAAD+//T/AAAAAAAAAAD///T/AAAAAAAAAAAAAPT/AAAAAAAAAAAIAPn/AAAAAAAAAAAJAPn/AAAAAAAAAAAKAPn/AAAAAAAAAAALAPn/AAAAAAAAAAAMAPn/AAAAAAAAAAANAPn/AAAAAAAAAADp//X/AAAAAAAAAADo//X/AAAAAAAAAADn//X/AAAAAAAAAADm//X/AAAAAAAAAADl//X/AAAAAAAAAADk//X/AAAAAAAAAADj//X/AAAAAAAAAADi//X/AAAAAAAAAADh//X/AAAAAAAAAADg//X/AAAAAAAAAADf//X/AAAAAAAAAADe//X/AAAAAAAAAADd//X/AAAAAAAAAADc//X/AAAAAAAAAADb//X/AAAAAAAAAADa//X/AAAAAAAAAADZ//X/AAAAAAAAAADY//X/AAAAAAAAAADX//X/AAAAAAAAAADW//X/AAAAAAAAAADV//X/AAAAAAAAAADU//X/AAAAAAAAAADT//X/AAAAAAAAAAAOAPn/AAAAAAAAAAAPAPn/AAAAAAAAAAAQAPn/AAAAAAAAAAARAPn/AAAAAAAAAAASAPn/AAAAAAAAAAATAPn/AAAAAAAAAAAUAPn/AAAAAAAAAAAVAPn/AAAAAAAAAAAWAPn/AAAAAAAAAAAXAPn/AAAAAAAAAAAYAPn/AAAAAAAAAAAZAPn/AAAAAAAAAAAaAPn/AAAAAAAAAAAbAPn/AAAAAAAAAAAcAPn/AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_sb12i")
+
+[node name="Player" parent="." instance=ExtResource("2_f7g2b")]
+position = Vector2(-13, -20)
+
+[node name="Duckling" parent="." instance=ExtResource("3_f7g2b")]
+position = Vector2(-551, -136)
+
+[node name="Duckling2" parent="." instance=ExtResource("3_f7g2b")]
+position = Vector2(-360, -233)
+
+[node name="Duckling3" parent="." instance=ExtResource("3_f7g2b")]
+position = Vector2(-204, -327)
+
+[node name="Duckling4" parent="." instance=ExtResource("3_f7g2b")]
+position = Vector2(-15, -392)
+
+[node name="Duckling5" parent="." instance=ExtResource("3_f7g2b")]
+position = Vector2(-731, -359)
+
+[node name="HUD" parent="." instance=ExtResource("4_4ptq8")]
+position = Vector2(-108, -161)
