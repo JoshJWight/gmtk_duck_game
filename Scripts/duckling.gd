@@ -20,4 +20,7 @@ func collect(player: CharacterBody2D) -> void:
 	$CollisionShape2D.set_deferred("disabled", true)
 	$PeepSound.play()
 	await $PeepSound.finished
+	get_tree().call_group(
+		"exit",
+		"collectDuckling")
 	queue_free()

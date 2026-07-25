@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://8kv5weyw3xvn"]
+[gd_scene load_steps=7 format=4 uid="uid://8kv5weyw3xvn"]
 
 [ext_resource type="Script" uid="uid://davqit6x5xs7q" path="res://Scripts/level_logic.gd" id="1_2qv2g"]
 [ext_resource type="TileSet" uid="uid://cwwpcn8llkg00" path="res://forest.tres" id="1_70wcc"]
 [ext_resource type="PackedScene" uid="uid://drips208myuq8" path="res://player.tscn" id="3_0sogr"]
 [ext_resource type="PackedScene" uid="uid://cfeuaq3vq712l" path="res://hud.tscn" id="4_5brs8"]
 [ext_resource type="PackedScene" uid="uid://1min7nkqpo7o" path="res://duckling.tscn" id="5_0sogr"]
+[ext_resource type="PackedScene" uid="uid://d0es53hwx4tll" path="res://exit_point.tscn" id="6_5brs8"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_2qv2g")
@@ -34,3 +35,7 @@ position = Vector2(255, -617)
 
 [node name="Duckling5" parent="." instance=ExtResource("5_0sogr")]
 position = Vector2(706, -393)
+
+[node name="ExitPoint" parent="." instance=ExtResource("6_5brs8")]
+position = Vector2(1292, 128)
+levelIdx = 3

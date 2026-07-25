@@ -87,9 +87,9 @@ func updateSprite() -> void:
 
 func _physics_process(delta: float) -> void:
 	#Fall through one-ways if holding down
-	set_collision_mask_value(2, !Input.is_action_pressed("ui_down"))
+	set_collision_mask_value(2, !Input.is_action_pressed("move_down"))
 	
-	var direction := Input.get_axis("ui_left", "ui_right")
+	var direction := Input.get_axis("move_left", "move_right")
 	if currentSprite == SPRITE_GLIDING:
 		velocity.x = direction * GLIDE_SPEED
 	else:
