@@ -30,6 +30,9 @@ func collectDuckling() -> void:
 	setMaxDown(max_down - 1)
 
 func _physics_process(delta: float) -> void:
+	#Fall through one-ways if holding down
+	set_collision_mask_value(2, !Input.is_action_pressed("ui_down"))
+	
 	if not is_on_floor():
 		if Input.is_action_pressed("ui_accept") and velocity.y > 0:
 			#Gliding

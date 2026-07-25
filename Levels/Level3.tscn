@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhv7d78685ebo"]
+
+[ext_resource type="Script" uid="uid://b4xvc2r7spcn3" path="res://Scripts/hud.gd" id="1_jon3f"]
+[ext_resource type="TileSet" uid="uid://cwwpcn8llkg00" path="res://forest.tres" id="2_jon3f"]
+[ext_resource type="PackedScene" uid="uid://cfeuaq3vq712l" path="res://hud.tscn" id="3_yd8fq"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_jon3f")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(1, 0)
+tile_set = ExtResource("2_jon3f")
+
+[node name="Node2D" parent="." instance=ExtResource("3_yd8fq")]
+position = Vector2(60, 149)
