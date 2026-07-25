@@ -7,15 +7,27 @@ const GRAVITY := 1200.0
 const GLIDING_TERMINAL_VELOCITY = 50
 
 var max_down = 5
-var current_down = max_down
+var current_down = 0
 
 
-func setCurrentDown(val: float) -> void:
+func setCurrentDown(val: int) -> void:
 	current_down = val
 	get_tree().call_group(
 		"hud",
 		"setCurrentDown",
 		current_down)
+		
+func setMaxDown(val: int) -> void:
+	max_down = val
+	get_tree().call_group(
+		"hud",
+		"setMaxDown",
+		max_down)
+	if(current_down > max_down):
+		setCurrentDown(max_down)
+		
+func collectDuckling() -> void:
+	setMaxDown(max_down - 1)
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():

@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=4 uid="uid://0kx0j7hy7sox"]
+[gd_scene load_steps=8 format=4 uid="uid://0kx0j7hy7sox"]
 
 [ext_resource type="Texture2D" uid="uid://dy2xq4p5cd0xl" path="res://dirt.png" id="1_1c2mv"]
+[ext_resource type="Script" uid="uid://davqit6x5xs7q" path="res://Scripts/level_logic.gd" id="1_sb12i"]
 [ext_resource type="PackedScene" uid="uid://drips208myuq8" path="res://player.tscn" id="2_f7g2b"]
 [ext_resource type="PackedScene" uid="uid://1min7nkqpo7o" path="res://duckling.tscn" id="3_f7g2b"]
 [ext_resource type="PackedScene" uid="uid://cfeuaq3vq712l" path="res://hud.tscn" id="4_4ptq8"]
@@ -8,11 +9,11 @@
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4ptq8"]
 texture = ExtResource("1_1c2mv")
 texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 1:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
 [sub_resource type="TileSet" id="TileSet_sb12i"]
 tile_size = Vector2i(32, 32)
@@ -20,6 +21,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_4ptq8")
 
 [node name="TestLevel" type="Node2D"]
+script = ExtResource("1_sb12i")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(1, 0)

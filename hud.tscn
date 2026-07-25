@@ -1,12 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://cfeuaq3vq712l"]
+[gd_scene load_steps=4 format=3 uid="uid://cfeuaq3vq712l"]
 
-[ext_resource type="Script" uid="uid://b4xvc2r7spcn3" path="res://hud.gd" id="1_37p78"]
+[ext_resource type="Script" uid="uid://b4xvc2r7spcn3" path="res://Scripts/hud.gd" id="1_37p78"]
 [ext_resource type="Texture2D" uid="uid://dg3oljnrmn60t" path="res://down.png" id="2_64ctp"]
+[ext_resource type="Texture2D" uid="uid://03lkbm7eby7n" path="res://down_gray.png" id="3_8sq4i"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." groups=["hud"]]
 script = ExtResource("1_37p78")
+downImg = ExtResource("2_64ctp")
+drainedDownImg = ExtResource("3_8sq4i")
 
 [node name="DownLabel" type="Label" parent="CanvasLayer"]
 offset_right = 40.0
@@ -34,17 +37,5 @@ layout_mode = 2
 texture = ExtResource("2_64ctp")
 
 [node name="Down4" type="TextureRect" parent="CanvasLayer/DownMeter"]
-layout_mode = 2
-texture = ExtResource("2_64ctp")
-
-[node name="Down5" type="TextureRect" parent="CanvasLayer/DownMeter"]
-layout_mode = 2
-texture = ExtResource("2_64ctp")
-
-[node name="Down6" type="TextureRect" parent="CanvasLayer/DownMeter"]
-layout_mode = 2
-texture = ExtResource("2_64ctp")
-
-[node name="Down7" type="TextureRect" parent="CanvasLayer/DownMeter"]
 layout_mode = 2
 texture = ExtResource("2_64ctp")
