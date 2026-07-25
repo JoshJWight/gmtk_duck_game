@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://1min7nkqpo7o"]
 
 [ext_resource type="Script" uid="uid://dq8hv61ytievn" path="res://Scripts/duckling.gd" id="1_1a4u2"]
-[ext_resource type="Texture2D" uid="uid://d1xint62l008y" path="res://duck_placeholder.png" id="1_dakj6"]
+[ext_resource type="Texture2D" uid="uid://tgbn7cnfd728" path="res://DuckSprites/Duckling.png" id="2_1a4u2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dakj6"]
 size = Vector2(60, 20)
@@ -10,8 +10,8 @@ size = Vector2(60, 20)
 script = ExtResource("1_1a4u2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_dakj6")
+position = Vector2(1, -6)
+texture = ExtResource("2_1a4u2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_dakj6")

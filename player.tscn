@@ -1,21 +1,35 @@
-[gd_scene load_steps=4 format=3 uid="uid://drips208myuq8"]
+[gd_scene load_steps=9 format=3 uid="uid://drips208myuq8"]
 
-[ext_resource type="Texture2D" uid="uid://d1xint62l008y" path="res://duck_placeholder.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://bb5buj1s7nbm5" path="res://Scripts/player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://cvevrg3ngc306" path="res://DuckSprites/DuckStanding.png" id="2_1jxqw"]
+[ext_resource type="Texture2D" uid="uid://m5it4s20u3d5" path="res://DuckSprites/DuckWalk1.png" id="3_dw050"]
+[ext_resource type="Texture2D" uid="uid://bsrc5x6m3cdbt" path="res://DuckSprites/DuckWalk2.png" id="4_b26j0"]
+[ext_resource type="Texture2D" uid="uid://b1kqrj5ydvtai" path="res://DuckSprites/DuckJumping.png" id="5_n7ghd"]
+[ext_resource type="Texture2D" uid="uid://cygf6uscaaawi" path="res://DuckSprites/DuckFalling.png" id="6_nvl01"]
+[ext_resource type="Texture2D" uid="uid://baf0jwj43ccvs" path="res://DuckSprites/DuckGliding.png" id="7_ivps1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
-size = Vector2(20, 30)
+size = Vector2(32, 30)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_onrkg")
+standing = ExtResource("2_1jxqw")
+walk1 = ExtResource("3_dw050")
+walk2 = ExtResource("4_b26j0")
+jumping = ExtResource("5_n7ghd")
+falling = ExtResource("6_nvl01")
+gliding = ExtResource("7_ivps1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 0)
 shape = SubResource("RectangleShape2D_onrkg")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_4flbx")
+[node name="DuckSprite" type="Sprite2D" parent="."]
+position = Vector2(0, -3)
+texture = ExtResource("2_1jxqw")
+offset = Vector2(0, -3)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
