@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://drips208myuq8"]
+[gd_scene load_steps=11 format=3 uid="uid://drips208myuq8"]
 
 [ext_resource type="Script" uid="uid://bb5buj1s7nbm5" path="res://Scripts/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://cvevrg3ngc306" path="res://DuckSprites/DuckStanding.png" id="2_1jxqw"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://b1kqrj5ydvtai" path="res://DuckSprites/DuckJumping.png" id="5_n7ghd"]
 [ext_resource type="Texture2D" uid="uid://cygf6uscaaawi" path="res://DuckSprites/DuckFalling.png" id="6_nvl01"]
 [ext_resource type="Texture2D" uid="uid://baf0jwj43ccvs" path="res://DuckSprites/DuckGliding.png" id="7_ivps1"]
+[ext_resource type="AudioStream" uid="uid://cjumbgyhyb644" path="res://SoundEffects/duck_wing_flap.wav" id="8_dw050"]
+[ext_resource type="AudioStream" uid="uid://cqigmg3dfekc" path="res://SoundEffects/glide_wind.wav" id="9_b26j0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
 size = Vector2(32, 30)
@@ -35,3 +37,10 @@ offset = Vector2(0, -3)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(0, 23)
+
+[node name="FlapSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_dw050")
+
+[node name="GlideSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_b26j0")
+volume_db = -25.752

@@ -5,6 +5,13 @@ extends CanvasLayer
 
 @onready var down_icons := $DownMeter.get_children()
 
+@onready var music: AudioStreamPlayer = $Music
+
+func _ready() -> void:
+	var length := music.stream.get_length()
+	var start_position := randf_range(0.0, length * 0.8)
+	music.play(start_position)
+
 func setCurrentDown(val: int) -> void:
 	for i in down_icons.size():
 		if i < val:

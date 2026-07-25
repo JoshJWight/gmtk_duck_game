@@ -17,4 +17,7 @@ func _process(_delta: float) -> void:
 
 func collect(player: CharacterBody2D) -> void:
 	player.collectDuckling()
+	$CollisionShape2D.set_deferred("disabled", true)
+	$PeepSound.play()
+	await $PeepSound.finished
 	queue_free()

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://1min7nkqpo7o"]
+[gd_scene load_steps=5 format=3 uid="uid://1min7nkqpo7o"]
 
 [ext_resource type="Script" uid="uid://dq8hv61ytievn" path="res://Scripts/duckling.gd" id="1_1a4u2"]
 [ext_resource type="Texture2D" uid="uid://tgbn7cnfd728" path="res://DuckSprites/Duckling.png" id="2_1a4u2"]
+[ext_resource type="AudioStream" uid="uid://csh3hwuysgpl1" path="res://SoundEffects/duckling_peep.wav" id="3_kas2k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dakj6"]
 size = Vector2(60, 20)
@@ -15,6 +16,9 @@ texture = ExtResource("2_1a4u2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_dakj6")
+
+[node name="PeepSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_kas2k")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
