@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0es53hwx4tll"]
+[gd_scene load_steps=6 format=3 uid="uid://d0es53hwx4tll"]
 
 [ext_resource type="Script" uid="uid://u7s5h3hdrvpk" path="res://Scripts/exit_point.gd" id="1_mf5k5"]
-[ext_resource type="Texture2D" uid="uid://tgbn7cnfd728" path="res://DuckSprites/Duckling.png" id="1_n1x11"]
+[ext_resource type="Texture2D" uid="uid://cho35ra0sn1of" path="res://DuckSprites/DucklingSwimming.png" id="2_wyyj4"]
+[ext_resource type="AudioStream" uid="uid://cbcyf5vg7p03t" path="res://SoundEffects/level_complete.wav" id="3_lhxlf"]
+[ext_resource type="Texture2D" uid="uid://dkwxy1spxojeu" path="res://DuckSprites/AllSwimming.png" id="4_1nan0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k0k0u"]
 size = Vector2(343, 50)
@@ -10,7 +12,7 @@ size = Vector2(343, 50)
 script = ExtResource("1_mf5k5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(80.5, -25)
+position = Vector2(77, -26)
 shape = SubResource("RectangleShape2D_k0k0u")
 
 [node name="Ducklings" type="Node2D" parent="."]
@@ -18,27 +20,27 @@ shape = SubResource("RectangleShape2D_k0k0u")
 [node name="DucklingSprite1" type="Sprite2D" parent="Ducklings"]
 visible = false
 position = Vector2(-39, -16)
-texture = ExtResource("1_n1x11")
+texture = ExtResource("2_wyyj4")
 
 [node name="DucklingSprite2" type="Sprite2D" parent="Ducklings"]
 visible = false
-position = Vector2(-13, -16)
-texture = ExtResource("1_n1x11")
+position = Vector2(3, -15)
+texture = ExtResource("2_wyyj4")
 
 [node name="DucklingSprite3" type="Sprite2D" parent="Ducklings"]
 visible = false
-position = Vector2(15, -16)
-texture = ExtResource("1_n1x11")
+position = Vector2(42, -17)
+texture = ExtResource("2_wyyj4")
 
 [node name="DucklingSprite4" type="Sprite2D" parent="Ducklings"]
 visible = false
-position = Vector2(41, -16)
-texture = ExtResource("1_n1x11")
+position = Vector2(80, -15)
+texture = ExtResource("2_wyyj4")
 
 [node name="DucklingSprite5" type="Sprite2D" parent="Ducklings"]
 visible = false
-position = Vector2(67, -16)
-texture = ExtResource("1_n1x11")
+position = Vector2(126, -16)
+texture = ExtResource("2_wyyj4")
 
 [node name="StatusLabel" type="Label" parent="."]
 offset_left = -91.0
@@ -46,6 +48,14 @@ offset_top = -74.0
 offset_right = -51.0
 offset_bottom = -51.0
 text = "Missing ducklings: 5"
+
+[node name="LevelCompleteSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_lhxlf")
+
+[node name="AllSwimming" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(56, -25)
+texture = ExtResource("4_1nan0")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

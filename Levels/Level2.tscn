@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://c2yieunikrwq1"]
+[gd_scene load_steps=11 format=4 uid="uid://c2yieunikrwq1"]
 
 [ext_resource type="Script" uid="uid://davqit6x5xs7q" path="res://Scripts/level_logic.gd" id="1_nn734"]
 [ext_resource type="TileSet" uid="uid://cwwpcn8llkg00" path="res://forest.tres" id="2_v115i"]
@@ -6,6 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://1min7nkqpo7o" path="res://duckling.tscn" id="4_506po"]
 [ext_resource type="PackedScene" uid="uid://drips208myuq8" path="res://player.tscn" id="5_v115i"]
 [ext_resource type="PackedScene" uid="uid://d0es53hwx4tll" path="res://exit_point.tscn" id="6_jglcl"]
+[ext_resource type="Texture2D" uid="uid://hjbscbudx806" path="res://KeySprites/DownArrow.png" id="7_vd23k"]
+[ext_resource type="Texture2D" uid="uid://cn5nqhppakte7" path="res://KeySprites/LetterZ.png" id="8_x7rwe"]
+[ext_resource type="Texture2D" uid="uid://dwt1rd8jw7kfi" path="res://KeySprites/LetterR.png" id="9_lf2mf"]
+[ext_resource type="PackedScene" uid="uid://tsstwtjjpib3" path="res://cutscene_trigger.tscn" id="10_x7rwe"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_nn734")
@@ -38,3 +42,50 @@ position = Vector2(280, -264)
 [node name="ExitPoint" parent="." instance=ExtResource("6_jglcl")]
 position = Vector2(1693, -31)
 levelIdx = 1
+
+[node name="DownArrow" type="Sprite2D" parent="."]
+position = Vector2(625, -49)
+texture = ExtResource("7_vd23k")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 576.0
+offset_top = -98.0
+offset_right = 673.0
+offset_bottom = -75.0
+text = "Fall Through"
+
+[node name="LetterZ" type="Sprite2D" parent="."]
+position = Vector2(287, -91)
+texture = ExtResource("8_x7rwe")
+
+[node name="LetterR" type="Sprite2D" parent="."]
+position = Vector2(961, -132)
+texture = ExtResource("9_lf2mf")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 227.0
+offset_top = -138.0
+offset_right = 365.0
+offset_bottom = -115.0
+text = "Hold to Zoom Out"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 910.0
+offset_top = -179.0
+offset_right = 1011.0
+offset_bottom = -156.0
+text = "Restart Level"
+
+[node name="Area2D" parent="." instance=ExtResource("10_x7rwe")]
+position = Vector2(468, -114)
+scale = Vector2(1, 6)
+text = "They're all over the place!|And I'll need most of my|Down to reach some|of them."
+time = 5.0
+
+[node name="Area2D2" parent="." instance=ExtResource("10_x7rwe")]
+position = Vector2(625, 147)
+scale = Vector2(1, 2)
+text = "Oh dear!|I won't have enough|Down to get back up.|(Press R to restart)"
+time = 999.0
+hasDownThreshold = true
+downThreshold = 4

@@ -15,11 +15,13 @@ drainedDownImg = ExtResource("3_8sq4i")
 [node name="DownLabel" type="Label" parent="CanvasLayer"]
 offset_right = 40.0
 offset_bottom = 23.0
-text = "Down: 0"
+theme_override_font_sizes/font_size = 25
+text = "Down: 5"
 
 [node name="DownMeter" type="VBoxContainer" parent="CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_top = 50.0
+offset_right = 50.0
+offset_bottom = 316.0
 
 [node name="Down0" type="TextureRect" parent="CanvasLayer/DownMeter"]
 layout_mode = 2
@@ -43,4 +45,4 @@ texture = ExtResource("2_64ctp")
 
 [node name="Music" type="AudioStreamPlayer" parent="CanvasLayer"]
 stream = ExtResource("4_640wx")
-volume_db = -10.366
+volume_db = -1.934

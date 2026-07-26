@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dn13hmwvkjhsi"]
+[gd_scene load_steps=3 format=3 uid="uid://dn13hmwvkjhsi"]
 
 [ext_resource type="Script" uid="uid://ci4qhy2851m53" path="res://Scripts/end_screen.gd" id="1_my301"]
+[ext_resource type="Texture2D" uid="uid://baf0jwj43ccvs" path="res://DuckSprites/DuckGliding.png" id="2_abjgy"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -13,11 +14,13 @@ script = ExtResource("1_my301")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 295.0
-offset_top = 170.0
-offset_right = 335.0
-offset_bottom = 193.0
-text = "Game Complete, thanks for playing!"
+offset_left = 307.0
+offset_top = 124.0
+offset_right = 516.0
+offset_bottom = 199.0
+text = "Flying south for the winter.
+
+Thanks for playing!"
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
@@ -26,5 +29,34 @@ offset_top = 221.0
 offset_right = 443.0
 offset_bottom = 252.0
 text = "Main Menu"
+
+[node name="DuckGliding" type="Sprite2D" parent="."]
+position = Vector2(865, 201)
+texture = ExtResource("2_abjgy")
+
+[node name="DuckGliding2" type="Sprite2D" parent="."]
+position = Vector2(671, 285)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_abjgy")
+
+[node name="DuckGliding3" type="Sprite2D" parent="."]
+position = Vector2(765, 252)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_abjgy")
+
+[node name="DuckGliding4" type="Sprite2D" parent="."]
+position = Vector2(591, 311)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_abjgy")
+
+[node name="DuckGliding5" type="Sprite2D" parent="."]
+position = Vector2(773, 147)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_abjgy")
+
+[node name="DuckGliding6" type="Sprite2D" parent="."]
+position = Vector2(687, 114)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_abjgy")
 
 [connection signal="pressed" from="Button" to="." method="_on_main_menu_button_pressed"]

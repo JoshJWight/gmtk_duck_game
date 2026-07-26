@@ -39,6 +39,16 @@ var facingDirection = 1.0
 
 var playingGlideSound = false
 
+var thinking = false
+var thoughtTimer = 0
+
+func haveThoughtBubble(text: String, time: float) -> void:
+	$ThoughtBubble.visible = true
+	$ThoughtLabel.visible = true
+	$ThoughtLabel.text = text
+	thinking = true
+	thoughtTimer = time
+
 func setCurrentDown(val: int) -> void:
 	current_down = val
 	get_tree().call_group(
@@ -83,9 +93,17 @@ func updateSprite() -> void:
 		glideSound.stop()
 		playingGlideSound = false
 	
-	
+func hidePlayer() -> void:
+	$DuckSprite.visible = false
 
 func _physics_process(delta: float) -> void:
+	if thinking:
+		thoughtTimer -= delta
+		if thoughtTimer <= 0:
+			thinking = false
+			$ThoughtBubble.visible = false
+			$ThoughtLabel.visible = false
+	
 	#Fall through one-ways if holding down
 	set_collision_mask_value(2, !Input.is_action_pressed("move_down"))
 	

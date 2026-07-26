@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://1min7nkqpo7o"]
+[gd_scene load_steps=7 format=3 uid="uid://1min7nkqpo7o"]
 
 [ext_resource type="Script" uid="uid://dq8hv61ytievn" path="res://Scripts/duckling.gd" id="1_1a4u2"]
 [ext_resource type="Texture2D" uid="uid://tgbn7cnfd728" path="res://DuckSprites/Duckling.png" id="2_1a4u2"]
 [ext_resource type="AudioStream" uid="uid://csh3hwuysgpl1" path="res://SoundEffects/duckling_peep.wav" id="3_kas2k"]
+[ext_resource type="Texture2D" uid="uid://bwqymq4v0bm4u" path="res://KeySprites/LetterE.png" id="4_fmsd1"]
+[ext_resource type="Texture2D" uid="uid://dg3oljnrmn60t" path="res://down.png" id="5_atr8g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dakj6"]
 size = Vector2(60, 20)
@@ -19,6 +21,17 @@ shape = SubResource("RectangleShape2D_dakj6")
 
 [node name="PeepSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_kas2k")
+
+[node name="ESprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(2, -45)
+texture = ExtResource("4_fmsd1")
+
+[node name="Down" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(4, -29)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_atr8g")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

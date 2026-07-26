@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://hc4ynpwrcalv"]
+[gd_scene load_steps=11 format=4 uid="uid://hc4ynpwrcalv"]
 
 [ext_resource type="Script" uid="uid://davqit6x5xs7q" path="res://Scripts/level_logic.gd" id="1_nutv8"]
 [ext_resource type="PackedScene" uid="uid://cfeuaq3vq712l" path="res://hud.tscn" id="2_05pb0"]
@@ -6,6 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://drips208myuq8" path="res://player.tscn" id="4_xcayt"]
 [ext_resource type="PackedScene" uid="uid://1min7nkqpo7o" path="res://duckling.tscn" id="5_5g41i"]
 [ext_resource type="PackedScene" uid="uid://d0es53hwx4tll" path="res://exit_point.tscn" id="6_05pb0"]
+[ext_resource type="Texture2D" uid="uid://cmubgs7k8desw" path="res://KeySprites/LeftArrow.png" id="7_5g41i"]
+[ext_resource type="Texture2D" uid="uid://bdythwdsd1vlx" path="res://KeySprites/RightArrow.png" id="8_7fl83"]
+[ext_resource type="Texture2D" uid="uid://ci4k8o7gxg4pf" path="res://KeySprites/Spacebar.png" id="9_p5226"]
+[ext_resource type="PackedScene" uid="uid://tsstwtjjpib3" path="res://cutscene_trigger.tscn" id="10_7fl83"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_nutv8")
@@ -18,7 +22,7 @@ tile_map_data = PackedByteArray("AAAiAAEAFQAOAAAAAAAiAAAAFQAOAAAAAAAiAP//FQAOAAA
 tile_set = ExtResource("3_nutv8")
 
 [node name="Player" parent="." instance=ExtResource("4_xcayt")]
-position = Vector2(-801, -59)
+position = Vector2(-803, -16)
 
 [node name="Duckling" parent="." instance=ExtResource("5_5g41i")]
 position = Vector2(1197, -72)
@@ -37,3 +41,65 @@ position = Vector2(2040, -202)
 
 [node name="ExitPoint" parent="." instance=ExtResource("6_05pb0")]
 position = Vector2(2308, 33)
+
+[node name="LeftArrow" type="Sprite2D" parent="."]
+position = Vector2(-817, -77)
+texture = ExtResource("7_5g41i")
+
+[node name="RightArrow" type="Sprite2D" parent="."]
+position = Vector2(-773, -77)
+texture = ExtResource("8_7fl83")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -816.0
+offset_top = -121.0
+offset_right = -776.0
+offset_bottom = -98.0
+text = "Move"
+
+[node name="Spacebar" type="Sprite2D" parent="."]
+position = Vector2(-284, -105)
+texture = ExtResource("9_p5226")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -309.0
+offset_top = -149.0
+offset_right = -269.0
+offset_bottom = -126.0
+text = "Flap"
+
+[node name="Spacebar2" type="Sprite2D" parent="."]
+position = Vector2(850, -184)
+texture = ExtResource("9_p5226")
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 799.0
+offset_top = -223.0
+offset_right = 900.0
+offset_bottom = -200.0
+text = "Hold to Glide"
+
+[node name="Where are they" parent="." instance=ExtResource("10_7fl83")]
+position = Vector2(-622, -157)
+scale = Vector2(1, 5)
+text = "Where did all the|ducklings go?"
+time = 3.0
+
+[node name="There you are" parent="." instance=ExtResource("10_7fl83")]
+position = Vector2(1168, -132)
+scale = Vector2(1, 5)
+text = "There you are!|I'll give you some of my|Down."
+time = 5.0
+
+[node name="Keep Flapping" parent="." instance=ExtResource("10_7fl83")]
+position = Vector2(499, -192)
+scale = Vector2(1, 6)
+text = "I can keep flapping as long|as I have golden Down."
+time = 5.0
+
+[node name="Area2D" parent="." instance=ExtResource("10_7fl83")]
+position = Vector2(1389, 51)
+scale = Vector2(6, 1)
+text = "Oh dear!|I've gotten stuck!|(Press R to restart)"
+time = 999.0
+hasDownThreshold = true
