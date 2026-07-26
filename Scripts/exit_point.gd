@@ -41,6 +41,7 @@ func _process(_delta: float) -> void:
 	if player_in_range != null and nDucklings == 5 and !endStarted:
 		endStarted = true
 		
+		$StatusLabel.visible = false
 		player_in_range.hidePlayer()
 		for i in duckling_sprites.size():
 			duckling_sprites[i].visible = false
