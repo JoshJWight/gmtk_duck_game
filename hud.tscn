@@ -15,6 +15,7 @@ drainedDownImg = ExtResource("3_8sq4i")
 [node name="DownLabel" type="Label" parent="CanvasLayer"]
 offset_right = 40.0
 offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "Down: 5"
 
