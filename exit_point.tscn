@@ -6,13 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://dkwxy1spxojeu" path="res://DuckSprites/AllSwimming.png" id="4_1nan0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k0k0u"]
-size = Vector2(343, 50)
+size = Vector2(284, 163)
 
 [node name="ExitPoint" type="Area2D" groups=["exit"]]
 script = ExtResource("1_mf5k5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(77, -26)
+position = Vector2(311, -82.5)
 shape = SubResource("RectangleShape2D_k0k0u")
 
 [node name="Ducklings" type="Node2D" parent="."]

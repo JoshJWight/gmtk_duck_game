@@ -18,7 +18,8 @@ offset_left = 307.0
 offset_top = 124.0
 offset_right = 516.0
 offset_bottom = 199.0
-text = "Flying south for the winter.
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Everyone's flying south for the winter.
 
 Thanks for playing!"
 
@@ -58,5 +59,15 @@ texture = ExtResource("2_abjgy")
 position = Vector2(687, 114)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_abjgy")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 1152.0
+offset_bottom = 651.0
+mouse_filter = 2
+color = Color(0.533333, 0.72549, 0.894118, 1)
 
 [connection signal="pressed" from="Button" to="." method="_on_main_menu_button_pressed"]

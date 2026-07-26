@@ -25,7 +25,7 @@ func collectDuckling() -> void:
 		duckling_sprites[i].visible = i < nDucklings
 		
 	if nDucklings == 5:
-		$StatusLabel.text = "Ready to go!"
+		$StatusLabel.text = "All ducklings found. Take the lead!"
 	else:
 		$StatusLabel.text = "Missing ducklings: " + str(5 - nDucklings)
 
